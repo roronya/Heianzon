@@ -18,6 +18,6 @@ $.ajax({
             $('#availability').parent().prepend("<p id='heianzon'>平安堂に在庫あります</p><style>p#heianzon { color: green; font-size: 130%;}</style>");
         }
         else{
-            $('#availability').parent().prepend("<p>平安堂に在庫無し。");
+            $('#availability').parent().prepend("<p>平安堂に在庫無し。</p>");
         }
     });
