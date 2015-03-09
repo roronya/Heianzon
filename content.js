@@ -14,8 +14,8 @@ $.ajax({
     .done(function(data) {
         stock = $(data).find(".article_area .result_ls_area .item_area .stock_lt").text();
         stock = stock.split('：')[1];
-        if(stock === 'あり'){
-            $('#availability').parent().prepend("<p id='heianzon'>平安堂に在庫はｧ、あります！</p><style>p#heianzon { color: red; font-size: 130%;}</style>");
+        if(stock === 'あり' || stock === '僅少'){
+            $('#availability').parent().prepend("<p id='heianzon'>平安堂に在庫あります</p><style>p#heianzon { color: green; font-size: 130%;}</style>");
         }
         else{
             $('#availability').parent().prepend("<p>平安堂に在庫無し。");
