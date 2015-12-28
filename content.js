@@ -1,6 +1,10 @@
 if ($('body').hasClass('book')) {
-    var data = $("#detail_bullets_id > table > tbody > tr > td > div > ul > li:nth-child(4)").text();
-    var isbn = data.split(':')[1];
+    var data = $("#detail_bullets_id > table > tbody > tr > td > div > ul > li")
+    for(var i=0;i<data.length;i++){
+        if ($(data[i]).text().match(/ISBN-10/)) {
+            var isbn = $(data[i]).text().split(':')[1].trim();
+        }
+    }    
     var eHonForm = "<form method='post' action='http://www.e-hon.ne.jp/bec/SA/Forward' target='_blank'>" +
         "<input type='hidden' name='　　　検　索　　　' value='btnKodawari'>" +
         "<input type='hidden' name='　　　クリア　　　' value='btnClear'>" +
